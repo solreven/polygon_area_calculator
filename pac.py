@@ -6,7 +6,7 @@ class Rectangle:
         self.height = height
 
     def __str__(self) -> str:
-        return f"A Rectangle with {self.width} width by {self.height} height."
+        return f"Rectangle(width={self.width}, height={self.height})"
 
     def set_width(self, width:int) -> None:
         self.width = width
@@ -42,3 +42,16 @@ class Rectangle:
         # If height allows for it.
         return cut_height * cut_width
         #In the above example, the height fits twice and the width fits once. So the shape fits twice.
+class Square(Rectangle):
+    def __init__(self, side: int) -> None:
+        super().__init__(side, side)
+    def __str__(self) -> str:
+        return f"Square(side={self.height})"
+    def set_width(self, width:int) -> None:
+        self.width = width
+        self.height = width
+    def set_height(self, height:int) -> None:
+        self.width = height
+        self.height = height
+    def set_side(self, side: int):
+        self.set_width(side)
